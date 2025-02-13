@@ -21,7 +21,7 @@ START_TIME = time.time()
 # Ask Doubt on telegram @codexdisscus
 
 main_buttons = [[
-    InlineKeyboardButton('🪄 ᴅᴇᴠᴇʟᴏᴘᴇʀ 🪄', url='https://t.me/kingvj01')
+    InlineKeyboardButton('🪄 ᴅᴇᴠᴇʟᴏᴘᴇʀ 🪄', url='https://t.me/Codexownerr')
 ],[
     InlineKeyboardButton('🍿 Movies ɢʀᴏᴜᴘ', url='https://t.me/codexmoviesgroup'),
     InlineKeyboardButton('🌐 Bots ᴄʜᴀɴɴᴇʟ', url='https://t.me/codexbotmaker')
