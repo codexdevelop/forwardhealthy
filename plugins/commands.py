@@ -16,22 +16,22 @@ from os import environ, execle, system
 
 START_TIME = time.time()
 
-# Don't Remove Credit Tg - @VJ_Botz
-# Subscribe YouTube Channel For Amazing Bot https://youtube.com/@Tech_VJ
-# Ask Doubt on telegram @KingVJ01
+# Don't Remove Credit Tg - @Codexownerr
+# join codex bots Channel For Amazing Bot https://t.me/codexbotmaker
+# Ask Doubt on telegram @codexdisscus
 
 main_buttons = [[
-    InlineKeyboardButton('❣️ ᴅᴇᴠᴇʟᴏᴘᴇʀ ❣️', url='https://t.me/kingvj01')
+    InlineKeyboardButton('🪄 ᴅᴇᴠᴇʟᴏᴘᴇʀ 🪄', url='https://t.me/kingvj01')
 ],[
-    InlineKeyboardButton('🔍 sᴜᴘᴘᴏʀᴛ ɢʀᴏᴜᴘ', url='https://t.me/vj_bot_disscussion'),
-    InlineKeyboardButton('🤖 ᴜᴘᴅᴀᴛᴇ ᴄʜᴀɴɴᴇʟ', url='https://t.me/vj_botz')
+    InlineKeyboardButton('🍿 Movies ɢʀᴏᴜᴘ', url='https://t.me/codexmoviesgroup'),
+    InlineKeyboardButton('🌐 Bots ᴄʜᴀɴɴᴇʟ', url='https://t.me/codexbotmaker')
 ],[
-    InlineKeyboardButton('💝 sᴜʙsᴄʀɪʙᴇ ᴍʏ ʏᴏᴜᴛᴜʙᴇ ᴄʜᴀɴɴᴇʟ', url='https://youtube.com/@Tech_VJ')
+    InlineKeyboardButton('🔉 join ᴍʏ support Group', url='https://t.me/codexmoviesgroup')
 ],[
-    InlineKeyboardButton('👨‍💻 ʜᴇʟᴘ', callback_data='help'),
-    InlineKeyboardButton('💁 ᴀʙᴏᴜᴛ', callback_data='about')
+    InlineKeyboardButton('🥷 ʜᴇʟᴘ', callback_data='help'),
+    InlineKeyboardButton('☄️ ᴀʙᴏᴜᴛ', callback_data='about')
 ],[
-    InlineKeyboardButton('⚙ sᴇᴛᴛɪɴɢs', callback_data='settings#main')
+    InlineKeyboardButton('🪩 sᴇᴛᴛɪɴɢs', callback_data='settings#main')
 ]]
 
 # Don't Remove Credit Tg - @VJ_Botz
@@ -49,9 +49,9 @@ async def start(client, message):
         reply_markup=reply_markup,
         text=Script.START_TXT.format(message.from_user.first_name))
 
-# Don't Remove Credit Tg - @VJ_Botz
-# Subscribe YouTube Channel For Amazing Bot https://youtube.com/@Tech_VJ
-# Ask Doubt on telegram @KingVJ01
+# Don't Remove Credit Tg - @Codexownerr
+# join codex bots Channel For Amazing Bot https://t.me/codexbotmaker
+# Ask Doubt on telegram @codexdisscus
 
 @Client.on_message(filters.private & filters.command(['restart']) & filters.user(Config.BOT_OWNER))
 async def restart(client, message):
@@ -61,16 +61,16 @@ async def restart(client, message):
     system("git pull -f && pip3 install --no-cache-dir -r requirements.txt")
     execle(sys.executable, sys.executable, "main.py", environ)
 
-# Don't Remove Credit Tg - @VJ_Botz
-# Subscribe YouTube Channel For Amazing Bot https://youtube.com/@Tech_VJ
-# Ask Doubt on telegram @KingVJ01
+# Don't Remove Credit Tg - @Codexownerr
+# join codex bots Channel For Amazing Bot https://t.me/codexbotmaker
+# Ask Doubt on telegram @codexdisscus
 
 @Client.on_callback_query(filters.regex(r'^help'))
 async def helpcb(bot, query):
     buttons = [[
-        InlineKeyboardButton('🤔 ʜᴏᴡ ᴛᴏ ᴜsᴇ ᴍᴇ ❓', callback_data='how_to_use')
+        InlineKeyboardButton('🪝 ʜᴏᴡ ᴛᴏ ᴜsᴇ ᴍᴇ ❔', callback_data='how_to_use')
     ],[
-        InlineKeyboardButton('Aʙᴏᴜᴛ ✨️', callback_data='about'),
+        InlineKeyboardButton('Aʙᴏᴜᴛ ☄️', callback_data='about'),
         InlineKeyboardButton('⚙ Sᴇᴛᴛɪɴɢs', callback_data='settings#main')
     ],[
         InlineKeyboardButton('• back', callback_data='back')
@@ -78,9 +78,9 @@ async def helpcb(bot, query):
     reply_markup = InlineKeyboardMarkup(buttons)
     await query.message.edit_text(text=Script.HELP_TXT, reply_markup=reply_markup)
 
-# Don't Remove Credit Tg - @VJ_Botz
-# Subscribe YouTube Channel For Amazing Bot https://youtube.com/@Tech_VJ
-# Ask Doubt on telegram @KingVJ01
+# Don't Remove Credit Tg - @Codexownerr
+# join codex bots Channel For Amazing Bot https://t.me/codexbotmaker
+# Ask Doubt on telegram @codexdisscus
 
 @Client.on_callback_query(filters.regex(r'^how_to_use'))
 async def how_to_use(bot, query):
@@ -92,9 +92,9 @@ async def how_to_use(bot, query):
         disable_web_page_preview=True
     )
 
-# Don't Remove Credit Tg - @VJ_Botz
-# Subscribe YouTube Channel For Amazing Bot https://youtube.com/@Tech_VJ
-# Ask Doubt on telegram @KingVJ01
+# Don't Remove Credit Tg - @Codexownerr
+# join codex bots Channel For Amazing Bot https://t.me/codexbotmaker
+# Ask Doubt on telegram @codexdisscus
 
 @Client.on_callback_query(filters.regex(r'^back'))
 async def back(bot, query):
@@ -103,15 +103,15 @@ async def back(bot, query):
        reply_markup=reply_markup,
        text=Script.START_TXT.format(query.from_user.first_name))
 
-# Don't Remove Credit Tg - @VJ_Botz
-# Subscribe YouTube Channel For Amazing Bot https://youtube.com/@Tech_VJ
-# Ask Doubt on telegram @KingVJ01
+# Don't Remove Credit Tg - @Codexownerr
+# join codex bots Channel For Amazing Bot https://t.me/codexbotmaker
+# Ask Doubt on telegram @codexdisscus
 
 @Client.on_callback_query(filters.regex(r'^about'))
 async def about(bot, query):
     buttons = [[
          InlineKeyboardButton('• back', callback_data='help'),
-         InlineKeyboardButton('Stats ✨️', callback_data='status')
+         InlineKeyboardButton('Stats 🌪️', callback_data='status')
     ]]
     reply_markup = InlineKeyboardMarkup(buttons)
     await query.message.edit_text(
@@ -120,9 +120,9 @@ async def about(bot, query):
         disable_web_page_preview=True
     )
 
-# Don't Remove Credit Tg - @VJ_Botz
-# Subscribe YouTube Channel For Amazing Bot https://youtube.com/@Tech_VJ
-# Ask Doubt on telegram @KingVJ01
+# Don't Remove Credit Tg - @Codexownerr
+# join codex bots Channel For Amazing Bot https://t.me/codexbotmaker
+# Ask Doubt on telegram @codexdisscus
 
 @Client.on_callback_query(filters.regex(r'^status'))
 async def status(bot, query):
@@ -131,7 +131,7 @@ async def status(bot, query):
     upt = await get_bot_uptime(START_TIME)
     buttons = [[
         InlineKeyboardButton('• back', callback_data='help'),
-        InlineKeyboardButton('System Stats ✨️', callback_data='systm_sts'),
+        InlineKeyboardButton('System Stats 🌪️', callback_data='systm_sts'),
     ]]
     reply_markup = InlineKeyboardMarkup(buttons)
     await query.message.edit_text(
@@ -140,9 +140,9 @@ async def status(bot, query):
         disable_web_page_preview=True,
     )
 
-# Don't Remove Credit Tg - @VJ_Botz
-# Subscribe YouTube Channel For Amazing Bot https://youtube.com/@Tech_VJ
-# Ask Doubt on telegram @KingVJ01
+# Don't Remove Credit Tg - @Codexownerr
+# join codex bots Channel For Amazing Bot https://t.me/codexbotmaker
+# Ask Doubt on telegram @codexdisscus
 
 @Client.on_callback_query(filters.regex(r'^systm_sts'))
 async def sys_status(bot, query):
@@ -154,7 +154,7 @@ async def sys_status(bot, query):
     used_space = disk_usage.used / (1024**3)    # Convert to GB
     free_space = disk_usage.free / (1024**3)
     text = f"""
-╔════❰ sᴇʀᴠᴇʀ sᴛᴀᴛs  ❱═❍⊱❁۪۪
+╔════❰ 🌀sᴇʀᴠᴇʀ sᴛᴀᴛs  ❱═❍⊱❁۪۪
 ║╭━━━━━━━━━━━━━━━➣
 ║┣⪼ <b>ᴛᴏᴛᴀʟ ᴅɪsᴋ sᴘᴀᴄᴇ</b>: <code>{total_space:.2f} GB</code>
 ║┣⪼ <b>ᴜsᴇᴅ</b>: <code>{used_space:.2f} GB</code>
@@ -171,9 +171,9 @@ async def sys_status(bot, query):
         disable_web_page_preview=True,
     )
 
-# Don't Remove Credit Tg - @VJ_Botz
-# Subscribe YouTube Channel For Amazing Bot https://youtube.com/@Tech_VJ
-# Ask Doubt on telegram @KingVJ01
+# Don't Remove Credit Tg - @Codexownerr
+# join codex bots Channel For Amazing Bot https://t.me/codexbotmaker
+# Ask Doubt on telegram @codexdisscus
 
 async def get_bot_uptime(start_time):
     # Calculate the uptime in seconds
@@ -190,6 +190,6 @@ async def get_bot_uptime(start_time):
     uptime_string += f" {uptime_seconds % 60} Sec"
     return uptime_string   
 
-# Don't Remove Credit Tg - @VJ_Botz
-# Subscribe YouTube Channel For Amazing Bot https://youtube.com/@Tech_VJ
-# Ask Doubt on telegram @KingVJ01
+# Don't Remove Credit Tg - @Codexownerr
+# join codex bots Channel For Amazing Bot https://t.me/codexbotmaker
+# Ask Doubt on telegram @codexdisscus
