@@ -39,14 +39,14 @@ async def pub_(bot, message):
     temp.CANCEL[user] = False
     frwd_id = message.data.split("_")[2]
     if temp.lock.get(user) and str(temp.lock.get(user))=="True":
-      return await message.answer("please wait until previous task complete", show_alert=True)
+      return await message.answer("🙄 please wait until previous task complete", show_alert=True)
     sts = STS(frwd_id)
     if not sts.verify():
       await message.answer("your are clicking on my old button", show_alert=True)
       return await message.message.delete()
     i = sts.get(full=True)
     if i.TO in temp.IS_FRWD_CHAT:
-      return await message.answer("In Target chat a task is progressing. please wait until task complete", show_alert=True)
+      return await message.answer("🥲In Target chat a task is progressing.\n\n🙄please wait until task complete", show_alert=True)
     m = await msg_edit(message.message, "<code>verifying your data's, please wait.</code>")
     _bot, caption, forward_tag, datas, protect, button = await sts.get_data(user)
     filter = datas['filters']
@@ -69,7 +69,7 @@ async def pub_(bot, message):
     else:
         extensions = None
     if not _bot:
-      return await msg_edit(m, "<code>You didn't added any bot. Please add a bot using /settings !</code>", wait=True)
+      return await msg_edit(m, "<code>💫You didn't added any bot.\n😅Please add a bot using /settings !</code>", wait=True)
     if _bot['is_bot'] == True:
         data = _bot['token']
     else:
@@ -84,25 +84,25 @@ async def pub_(bot, message):
     try: 
        await client.get_messages(sts.get("FROM"), sts.get("limit"))
     except:
-       await msg_edit(m, f"**Source chat may be a private channel / group. Use userbot (user must be member over there) or  if Make Your [Bot](t.me/{_bot['username']}) an admin over there**", retry_btn(frwd_id), True)
+       await msg_edit(m, f"🙄**Source chat may be a private channel / group.\n\n👉Use userbot (user must be member over there) or  if Make Your [Bot](t.me/{_bot['username']}) an admin over there**", retry_btn(frwd_id), True)
        return await stop(client, user)
     try:
        k = await client.send_message(i.TO, "Testing")
        await k.delete()
     except:
-       await msg_edit(m, f"**Please Make Your [UserBot / Bot](t.me/{_bot['username']}) Admin In Target Channel With Full Permissions**", retry_btn(frwd_id), True)
+       await msg_edit(m, f"😣**Please Make Your [UserBot / Bot](t.me/{_bot['username']}) Admin In Target Channel With Full Permissions**", retry_btn(frwd_id), True)
        return await stop(client, user)
     user_have_db = False
     dburi = datas['db_uri']
     if dburi is not None:
         connected, user_db = await connect_user_db(user, dburi, i.TO)
         if not connected:
-            await msg_edit(m, "<code>Cannot Connected Your db Errors Found Dup files Have Been Skipped after Restart</code>")
+            await msg_edit(m, "<code>😮‍💨Cannot Connected Your db Errors Found Dup files Have Been Skipped after Restart</code>")
         else:
             user_have_db = True
     temp.forwardings += 1
     await db.add_frwd(user)
-    await send(client, user, "<b>Fᴏʀᴡᴀᴅɪɴɢ sᴛᴀʀᴛᴇᴅ🔥</b>")
+    await send(client, user, "<b>🌪️Fᴏʀᴡᴀᴅɪɴɢ sᴛᴀʀᴛᴇᴅ</b>")
     sts.add(time=True)
     sleep = 1 if _bot['is_bot'] else 10
     await msg_edit(m, "<code>processing...</code>") 
@@ -174,7 +174,7 @@ async def pub_(bot, message):
             temp.IS_FRWD_CHAT.remove(sts.TO)
             return await stop(client, user)
         temp.IS_FRWD_CHAT.remove(sts.TO)
-        await send(client, user, "<b>🎉 ғᴏʀᴡᴀᴅɪɴɢ ᴄᴏᴍᴘʟᴇᴛᴇᴅ</b>")
+        await send(client, user, "<b>💫 ғᴏʀᴡᴀᴅɪɴɢ ᴄᴏᴍᴘʟᴇᴛᴇᴅ</b>")
         await edit(user, m, 'ᴄᴏᴍᴘʟᴇᴛᴇᴅ', "completed", sts) 
         if user_have_db:
             await user_db.drop_all()
@@ -279,7 +279,7 @@ async def is_cancelled(client, user, msg, sts):
       if sts.TO in temp.IS_FRWD_CHAT:
          temp.IS_FRWD_CHAT.remove(sts.TO)
       await edit(user, msg, 'ᴄᴀɴᴄᴇʟʟᴇᴅ', "cancelled", sts)
-      await send(client, user, "<b>❌ ғᴏʀᴡᴀᴅɪɴɢ ᴄᴀɴᴄᴇʟʟᴇᴅ</b>")
+      await send(client, user, "<b>😮‍💨 ғᴏʀᴡᴀᴅɪɴɢ ᴄᴀɴᴄᴇʟʟᴇᴅ</b>")
       await stop(client, user)
       return True 
    return False 
@@ -520,7 +520,7 @@ async def restart_pending_forwads(bot, user):
        else:
            extensions = None
        if not _bot:
-          return await msg_edit(m, "<code>You didn't added any bot. Please add a bot using /settings !</code>", wait=True)
+          return await msg_edit(m, "<code>💫You didn't added any bot.\n😅Please add a bot using /settings !</code>", wait=True)
        if _bot['is_bot'] == True:
           data = _bot['token']
        else:
@@ -538,13 +538,13 @@ async def restart_pending_forwads(bot, user):
        try: 
           await client.get_messages(sts.get("FROM"), sts.get("limit"))
        except:
-          await msg_edit(m, f"**Source chat may be a private channel / group. Use userbot (user must be member over there) or  if Make Your [Bot](t.me/{_bot['username']}) an admin over there**", retry_btn(firwd_id), True)
+          await msg_edit(m, f"🙄**Source chat may be a private channel / group.\n\n👉Use userbot (user must be member over there) or  if Make Your [Bot](t.me/{_bot['username']}) an admin over there**", retry_btn(firwd_id), True)
           return await stop(client, user)
        try:
           k = await client.send_message(i.TO, "Testing")
           await k.delete()
        except:
-          await msg_edit(m, f"**Please Make Your [UserBot / Bot](t.me/{_bot['username']}) Admin In Target Channel With Full Permissions**", retry_btn(forward_id), True)
+          await msg_edit(m, f"😣**Please Make Your [UserBot / Bot](t.me/{_bot['username']}) Admin In Target Channel With Full Permissions**", retry_btn(forward_id), True)
           return await stop(client, user)
     except:
        return await db.rmve_frwd(user)
@@ -553,7 +553,7 @@ async def restart_pending_forwads(bot, user):
     if dburi is not None:
         connected, user_db = await connect_user_db(user, dburi, i.TO)
         if not connected:
-            await msg_edit(m, "<code>Cannot Connected Your db Errors Found Dup files Have Been Skipped after Restart</code>")
+            await msg_edit(m, "<code>😮‍💨Cannot Connected Your db Errors Found Dup files Have Been Skipped after Restart</code>")
         else:
             user_have_db = True
     try:
@@ -635,7 +635,7 @@ async def restart_pending_forwads(bot, user):
             temp.IS_FRWD_CHAT.remove(sts.TO)
             return await stop(client, user)
         temp.IS_FRWD_CHAT.remove(sts.TO)
-        await send(client, user, "<b>🎉 ғᴏʀᴡᴀᴅɪɴɢ ᴄᴏᴍᴘʟᴇᴛᴇᴅ</b>")
+        await send(client, user, "<b>💫 ғᴏʀᴡᴀᴅɪɴɢ ᴄᴏᴍᴘʟᴇᴛᴇᴅ</b>")
         if user_have_db:
             await user_db.drop_all()
             await user_db.close()
