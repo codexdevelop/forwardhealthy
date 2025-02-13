@@ -77,7 +77,7 @@ async def unequify(client, message):
       return await message.reply("**please wait until previous task complete**")
    _bot = await db.get_userbot(user_id)
    if not _bot:
-      return await message.reply("<b>Need userbot to do this process. Please add a userbot using /settings</b>")
+      return await message.reply("<b>✨Need userbot to do this process.\n🌀Please add a userbot using /settings</b>")
    target = await client.ask(user_id, text="**Forward the last message from target chat or send last message link.**\n/cancel - `cancel this process`")
    if target.text and target.text.startswith("/"):
       return await message.reply("**process cancelled !**")
