@@ -34,6 +34,9 @@ resetall - reset all users settings (owner only)
 broadcast - broadcast a message to all your users (owner only)
 ```
 
+[![Deploy to Koyeb](https://www.koyeb.com/static/images/deploy/button.svg)](https://app.koyeb.com/deploy?name=forwardhealthy&instance_type=free)
+
+
 ## Variables
 
 * `API_ID` API Id from my.telegram.org
